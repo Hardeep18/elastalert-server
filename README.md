@@ -1,2 +1,2 @@
-# elastalert-server
+# Elastalert-server
 ElastAlert Server
