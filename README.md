@@ -1,0 +1,2 @@
+# elastalert-server
+ElastAlert Server
