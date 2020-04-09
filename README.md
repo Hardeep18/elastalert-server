@@ -20,14 +20,14 @@ docker run -d -p 3030:3030 -p 3333:3333 \
     -v `pwd`/rules:/opt/elastalert/rules \
     -v `pwd`/rule_templates:/opt/elastalert/rule_templates \
     --net="host" \
-    --name elastalert bitsensor/elastalert:latest
+    --name linuxcloudops/elastalert:7.5.0
 ```
 
 ## Building Docker image
 
 Clone the repository
 ```bash
-git clone https://github.com/bitsensor/elastalert.git && cd elastalert
+git clone https://github.com/Hardeep18/elastalert-server.git && cd elastalert-server
 ```
 
 Build the image
@@ -37,7 +37,7 @@ make build
 which is equivalent of
 ```
 docker pull alpine:latest && docker pull node:latest
-docker build -t elastalert .
+docker build -t elastalert-server .
 ```
 
 ### Options
@@ -48,7 +48,7 @@ make build v=v0.1.28
 ```
 Using a custom mirror
 ```bash
-docker build --build-arg ELASTALERT_URL=http://example.mirror.com/master.zip -t elastalert .
+docker build --build-arg ELASTALERT_URL=http://example.mirror.com/master.zip -t elastalert-server .
 ```
 
 ## Configuration
@@ -281,8 +281,6 @@ We'd love to help you if you have any questions. You can contact us by sending a
 ## License
 This project is [BSD Licensed](../LICENSE.md) with some modifications. Note that this only accounts for the ElastAlert Server, not ElastAlert itself ([ElastAlert License](https://github.com/Yelp/elastalert#license)).
 
-## Disclaimer
-We [(BitSensor)](https://www.bitsensor.io) do not have any rights over the original [ElastAlert](https://github.com/Yelp/elastalert) project from [Yelp](https://www.yelp.com/). We do not own any trademarks or copyright to the name "ElastAlert" (ElastAlert, however, does because of their Apache 2 license). We do own copyright over the source code of this project, as stated in our BSD license, which means the copyright notice below and as stated in the BSD license should be included in (merged / changed) distributions of this project. The BSD license also states that making promotional content using 'BitSensor' is prohibited. However we hereby grant permission to anyone who wants to use the phrases 'BitSensor ElastAlert Plugin', 'BitSensor Software' or 'BitSensor Alerting' in promotional content. Phrases like 'We use BitSensor' or 'We use BitSensor security' when only using our ElastAlert Server are forbidden.
 
 ## Copyright
 Copyright © 2018, BitSensor B.V.
