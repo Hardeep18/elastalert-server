@@ -20,14 +20,14 @@ docker run -d -p 3030:3030 -p 3333:3333 \
     -v `pwd`/rules:/opt/elastalert/rules \
     -v `pwd`/rule_templates:/opt/elastalert/rule_templates \
     --net="host" \
-    --name elastalert bitsensor/elastalert:latest
+    --name linuxcloudops/elastalert:7.5.0
 ```
 
 ## Building Docker image
 
 Clone the repository
 ```bash
-git clone https://github.com/bitsensor/elastalert.git && cd elastalert
+git clone https://github.com/Hardeep18/elastalert-server.git && cd elastalert-server
 ```
 
 Build the image
@@ -37,7 +37,7 @@ make build
 which is equivalent of
 ```
 docker pull alpine:latest && docker pull node:latest
-docker build -t elastalert .
+docker build -t elastalert-server .
 ```
 
 ### Options
@@ -48,7 +48,7 @@ make build v=v0.1.28
 ```
 Using a custom mirror
 ```bash
-docker build --build-arg ELASTALERT_URL=http://example.mirror.com/master.zip -t elastalert .
+docker build --build-arg ELASTALERT_URL=http://example.mirror.com/master.zip -t elastalert-server .
 ```
 
 ## Configuration
