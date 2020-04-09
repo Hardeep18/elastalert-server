@@ -1,0 +1,27 @@
+# Rule name, must be unique
+name: slack-demo
+
+# the frequency rule type alerts when num_events events occur with timeframe time
+type: frequency
+
+# Index to search, wildcard supported
+index: filebeat-*
+
+# Alert when this many documents matching the query occur within a timeframe
+num_events: 3
+
+# num_events must occur within this amount of time to trigger an alert
+timeframe:
+  hours: 1
+
+filter:
+- query_string:
+      query: "message: this is testing from server"
+
+# The alert is use when a match is found
+alert:
+- "slack"
+
+# a list of email addresses to send alerts to
+slack:
+slack_webhook_url: "xxxx"
