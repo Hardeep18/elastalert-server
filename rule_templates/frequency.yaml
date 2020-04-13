@@ -24,4 +24,4 @@ alert:
 
 # a list of email addresses to send alerts to
 slack:
-slack_webhook_url: "xxxx"
+slack_webhook_url: "https://hooks.slack.com/services/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"
